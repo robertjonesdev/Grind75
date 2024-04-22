@@ -1,4 +1,4 @@
-# ProjectEulerProblems
+# Project Euler Problems
 
 My solutions for Project Euler problems in Python.
 
