@@ -7,7 +7,7 @@ class Solution:
         max_profit = 0
         while right < len(prices):
             currentProfit = prices[right] - prices[left]
-            if prices[left] < prices[right]:
+            if currentProfit > 0:
                 max_profit = max(currentProfit, max_profit)
             else:
                 left = right
