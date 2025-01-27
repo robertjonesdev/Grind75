@@ -7,6 +7,7 @@ class Solution:
     ) -> List[List[int]]:
         m, n = len(image), len(image[0])
         previous = image[sr][sc]
+        visited = set()
 
         def fill(sr, sc, color, previous):
             if sr < 0 or sr >= m:
@@ -15,8 +16,11 @@ class Solution:
                 return
             if image[sr][sc] != previous:
                 return
+            if (sr, sc) in visited:
+                return
 
             image[sr][sc] = color
+            visited.add((sr, sc))
             fill(sr + 1, sc, color, previous)
             fill(sr - 1, sc, color, previous)
             fill(sr, sc + 1, color, previous)
@@ -24,11 +28,3 @@ class Solution:
 
         fill(sr, sc, color, previous)
         return image
-
-
-image = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
-sr = 1
-sc = 1
-color = 2
-
-print(Solution().floodFill(image, sr, sc, color))
