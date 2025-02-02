@@ -96,3 +96,143 @@
 - Be prepared to provide **real-world examples** from your experience.
 - Demonstrate your understanding of **best practices** and **design patterns** (e.g., Dependency Injection, Singleton, etc.).
 - Showcase your ability to **debug and troubleshoot** Spring Boot applications.
+
+Sure! Here are the answers to your Java interview questions:
+
+---
+
+### 1. **Difference between Spring and Spring Boot**
+- **Spring**: A lightweight, modular framework for building enterprise Java applications. It provides comprehensive infrastructure support for dependency injection, transaction management, and more. However, it requires a lot of manual configuration.
+- **Spring Boot**: Built on top of Spring, it simplifies the development of Spring applications by providing defaults and auto-configuration. It also includes embedded servers (like Tomcat) and eliminates the need for XML configuration.
+
+---
+
+### 2. **How does a Spring Boot application determine the active profile?**
+Spring Boot determines the active profile using:
+- The `spring.profiles.active` property in `application.properties` or `application.yml`.
+- Command-line arguments (`--spring.profiles.active=dev`).
+- Environment variables.
+- If no profile is specified, the `default` profile is used.
+
+---
+
+### 3. **How to integrate multiple databases in a Spring Boot application?**
+- Define multiple `DataSource` beans in the configuration class.
+- Use `@Primary` to mark the primary `DataSource`.
+- Use `@Qualifier` to differentiate between the `DataSource` beans.
+- Configure each database connection in `application.properties` or `application.yml`.
+
+---
+
+### 4. **What is the difference between a Filter and an Interceptor?**
+- **Filter**: Part of the Servlet API, it intercepts requests before they reach the DispatcherServlet. It works at the web server level.
+- **Interceptor**: Part of Spring MVC, it intercepts requests during the processing of a controller. It works at the Spring context level.
+
+---
+
+### 5. **Explain the MVC workflow from frontend to backend.**
+1. The client sends an HTTP request.
+2. The DispatcherServlet receives the request and routes it to the appropriate controller.
+3. The controller processes the request, interacts with the service layer, and returns a model and view.
+4. The view resolver maps the view name to a specific view (e.g., JSP, Thymeleaf).
+5. The view renders the response, which is sent back to the client.
+
+---
+
+### 6. **Authorization vs Authentication**
+- **Authentication**: Verifies the identity of a user (e.g., username/password, OAuth tokens).
+- **Authorization**: Determines if the authenticated user has permission to access a resource.
+
+---
+
+### 7. **How do you connect to a database in Spring Boot?**
+- Add the database dependency (e.g., `spring-boot-starter-data-jpa`).
+- Configure the database connection in `application.properties` or `application.yml` (e.g., `spring.datasource.url`, `username`, `password`).
+- Use Spring Data JPA or JDBC to interact with the database.
+
+---
+
+### 8. **Can we maintain sessions in REST APIs?**
+REST APIs are stateless, so sessions are not maintained. However, you can use tokens (e.g., JWT) to manage user state securely.
+
+---
+
+### 9. **What is Lombok?**
+Lombok is a library that reduces boilerplate code by automatically generating getters, setters, constructors, and other methods at compile time using annotations like `@Data`, `@Getter`, `@Setter`, etc.
+
+---
+
+### 10. **What is the Dispatcher Servlet?**
+The DispatcherServlet is the front controller in Spring MVC. It handles incoming HTTP requests, routes them to the appropriate controllers, and manages the workflow of the application.
+
+---
+
+### 11. **What are Spring Security and Spring Cloud?**
+- **Spring Security**: A framework for securing Spring applications, providing authentication, authorization, and protection against common attacks.
+- **Spring Cloud**: A suite of tools for building microservices-based applications, including service discovery, configuration management, and load balancing.
+
+---
+
+### 12. **What is the IOC Container?**
+The Inversion of Control (IOC) container is the core of Spring. It manages the lifecycle of beans and their dependencies, injecting them where needed.
+
+---
+
+### 13. **What is Dependency Injection and its types? Which is recommended and why?**
+- **Dependency Injection (DI)**: A design pattern where objects are provided with their dependencies rather than creating them internally.
+- **Types**: Constructor Injection, Setter Injection, and Field Injection.
+- **Recommended**: Constructor Injection, as it ensures immutability and makes dependencies explicit.
+
+---
+
+### 14. **What does @SpringBootApplication do?**
+- Combines `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan`.
+- Marks the main class of a Spring Boot application and enables auto-configuration and component scanning.
+
+---
+
+### 15. **@Qualifier vs @Primary**
+- **@Qualifier**: Used to resolve conflicts when multiple beans of the same type exist.
+- **@Primary**: Marks a bean as the default choice when multiple beans of the same type exist.
+
+---
+
+### 16. **@RestController vs @Controller**
+- **@Controller**: Used for traditional Spring MVC applications where views are returned.
+- **@RestController**: A combination of `@Controller` and `@ResponseBody`, used for RESTful web services where data is returned directly.
+
+---
+
+### 17. **@RequestParam vs @PathVariable**
+- **@RequestParam**: Extracts query parameters from the URL (e.g., `/users?id=1`).
+- **@PathVariable**: Extracts values from the URI template (e.g., `/users/{id}`).
+
+---
+
+### 18. **@Component vs @ComponentScan**
+- **@Component**: Marks a class as a Spring bean.
+- **@ComponentScan**: Configures the packages to scan for components.
+
+---
+
+### 19. **@ExceptionHandler vs @ControllerAdvice**
+- **@ExceptionHandler**: Handles exceptions at the controller level.
+- **@ControllerAdvice**: Provides global exception handling for all controllers.
+
+---
+
+### 20. **What is Spring Boot Actuator and how is it useful?**
+Spring Boot Actuator provides production-ready features like health checks, metrics, and monitoring. It helps in managing and monitoring Spring Boot applications.
+
+---
+
+### 21. **What are the HTTP Methods you frequently use?**
+- **GET**: Retrieve data.
+- **POST**: Create a new resource.
+- **PUT**: Update an existing resource.
+- **DELETE**: Delete a resource.
+- **PATCH**: Partially update a resource.
+
+---
+
+Let me know if you need further clarification on any of these!
